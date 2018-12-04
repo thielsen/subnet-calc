@@ -6,7 +6,7 @@ def input_parse(input)
     input = input.split(/[\/\.]/)
   elsif input =~ /^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\ (?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?$)/ then
     mask = dotted_to_slash(input.split(" ")[1])
-    output =  (input.split(" ")[0]).split(".") << mask
+    output =  (input.split(" ")[0]).split(".") << mask.to_s
   else
     return nil
   end

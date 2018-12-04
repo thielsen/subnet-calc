@@ -2,10 +2,10 @@ require 'subnet'
 
 describe 'input_parse' do
   it 'normalise correct slash notation' do
-    expect(input_parse('123.123.123.123/16')).to eq '["123", "123", "123", "123", "16"]'
+    expect(input_parse('123.123.123.123/16')).to eq ["123", "123", "123", "123", "16"]
   end
   it 'normalise correct subnet notation' do
-    expect(input_parse('123.123.123.123 255.255.0.0')).to eq '["123", "123", "123", "123", "16"]'
+    expect(input_parse('123.123.123.123 255.255.0.0')).to eq ["123", "123", "123", "123", "16"]
   end
   it 'error on incorrect slash notation subnet mask' do
     expect(input_parse('123.123.123.123/33')).to eq nil
